@@ -1,7 +1,6 @@
 import logging
 import os
 
-import pandas as pd
 import requests
 
 logging.basicConfig(
@@ -14,7 +13,13 @@ api_key = os.getenv("GUARDIAN_API_KEY")
 base_url = "https://content.guardianapis.com/search"
 
 
-def fetch_data(query, page_size=20, start_date="2025-11-15", stop_date="2025-11-24"):
+def fetch_data(
+    query,
+    page_size=20,
+    start_date="2025-11-15",
+    stop_date="2025-11-24",
+):
+
     """
     Fetch paginated articles from the Guardian API.
 
@@ -52,4 +57,4 @@ def fetch_data(query, page_size=20, start_date="2025-11-15", stop_date="2025-11-
         total_pages = data["response"]["pages"]
         current_page += 1
 
-
+    return query_container
