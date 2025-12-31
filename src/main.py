@@ -1,5 +1,6 @@
-from guardian_api.client import fetch_data
 import pandas as pd
+
+from guardian_api.client import fetch_data
 
 
 def main():
