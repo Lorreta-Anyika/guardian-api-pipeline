@@ -1,6 +1,7 @@
 from guardian_api.client import fetch_data
 import pandas as pd
 
+
 def main():
     articles = fetch_data(query="ukraine-Russian-war")
     try:
@@ -12,6 +13,7 @@ def main():
         print("Could not normalize articles into a DataFrame.")
         print("Reason:", e)
         print("Raw articles output:", articles)
+
 
 if __name__ == "__main__":
     main()
